@@ -1,49 +1,56 @@
 // Week 4 JavaScript Portfolio Project - Data Organization
 // Students will learn to organize their portfolio data using JavaScript objects and arrays
 
-// TODO: Fill in your personal information
 const portfolio = {
     // Personal information object
     owner: {
-        name: "Your Name Here",        // TODO: Add your name
-        title: "Your Title Here",      // TODO: Add your professional title
-        email: "your.email@example.com", // TODO: Add your email
-        location: "Your City, State",  // TODO: Add your location
-        bio: "Write a brief description about yourself here. What are you passionate about? What are your goals?" // TODO: Add your bio
+        name: "Arno Demearteau",
+        title: "Graduate Student, MS Berkeley",
+        email: "ademarteau@berkeley.edu",
+        location: "Berkeley, CA",
+        bio: "Graduate student at UC Berkeley learning to build for the web. I'm interested in how data and interface design come togethe and I'm currently working through JavaScript fundamentals by turning my static portfolio into a data driven one."
     },
-    
-    // Skills as an array
+
+    // Skills as an array 
     skills: [
-        "Add your first skill here",   // TODO: Replace with your actual skills
-        "Add your second skill here",  // TODO: Add more skills
-        "Add your third skill here"    // TODO: Students should have at least 5 skills
-        // TODO: Add more skills - aim for 5-7 skills total
+        "HTML",
+        "CSS",
+        "JavaScript",
+        "Python",
+        "Git & GitHub",
+        "Data analysis"
     ],
-    
+
     // Projects as array of objects
     projects: [
         {
-            title: "Your First Project",
-            description: "Describe what this project does and why it's interesting",
+            title: "Static Portfolio Site",
+            description: "My Week 3 portfolio: a hand-written multi-section page built with semantic HTML and a CSS layout, no JavaScript. This is the version the current project replaces.",
             technologies: ["HTML", "CSS"], // Array of technologies used
-            completionDate: "2025-08-15",   // When you completed it
-            featured: true                   // Is this a featured project?
+            completionDate: "2026-09-14",  // When you completed it
+            featured: false                 // Is this a featured project?
         },
         {
-            title: "Your Second Project", 
-            description: "Another project description here",
+            title: "Data-Driven Portfolio",
+            description: "This project. The same portfolio, but every section is generated from one JavaScript object using template literals and for loops, so updating content means editing data instead of markup.",
             technologies: ["HTML", "CSS", "JavaScript"],
-            completionDate: "2025-09-01",
-            featured: false
+            completionDate: "2026-09-28",
+            featured: true
+        },
+        {
+            title: "Course Data Explorer",
+            description: "A small Python script that reads a CSV of course records and prints summary statistics, which is what got me interested in presenting data on the web in the first place.",
+            technologies: ["Python", "Pandas"],
+            completionDate: "2026-08-30",
+            featured: true
         }
-        // TODO: Add more projects during class
     ],
-    
+
     // Contact and availability information
     availability: {
-        freelance: false,    // TODO: Set to true if available for freelance work
-        fullTime: false,     // TODO: Set to true if seeking full-time position
-        partTime: true       // TODO: Set to true if available for part-time work
+        freelance: false,
+        fullTime: false,
+        partTime: true
     }
 };
 
@@ -51,17 +58,27 @@ const portfolio = {
 console.log("=== PORTFOLIO DATA EXPLORER ===");
 console.log("Full portfolio object:", portfolio);
 
-// TODO: During class, we'll add more console.log() statements to explore the data
-// Examples students will try:
-// console.log("Owner name:", portfolio.owner.name);
-// console.log("First skill:", portfolio.skills[0]);
-// console.log("Number of projects:", portfolio.projects.length);
+console.log("Owner name:", portfolio.owner.name);
+console.log("Email:", portfolio.owner.email);
 
-// TODO: Students will learn to access nested properties
-// console.log("Email:", portfolio.owner.email);
-// console.log("Second project:", portfolio.projects[1]);
-// console.log("Available for freelance?", portfolio.availability.freelance);
+console.log("First skill:", portfolio.skills[0]);
+console.log("Number of skills:", portfolio.skills.length);
+console.log("Number of projects:", portfolio.projects.length);
 
-// TODO: Students will create summary strings using template literals
-// let summary = `${portfolio.owner.name} is a ${portfolio.owner.title} with ${portfolio.skills.length} skills.`;
-// console.log("Summary:", summary);
+console.log("Second project:", portfolio.projects[1]);
+console.log("Second project's title:", portfolio.projects[1].title);
+
+console.log("Tech used by first project:", portfolio.projects[0].technologies);
+
+console.log("Available for freelance?", portfolio.availability.freelance);
+console.log("Available for part-time?", portfolio.availability.partTime);
+
+let summary = `${portfolio.owner.name} is a ${portfolio.owner.title} with ${portfolio.skills.length} skills and ${portfolio.projects.length} projects.`;
+console.log("Summary:", summary);
+
+for (let i = 0; i < portfolio.projects.length; i++) {
+    let project = portfolio.projects[i];
+    if (project.featured === true) {
+        console.log("⭐ Featured:", project.title);
+    }
+}
