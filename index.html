@@ -46,8 +46,57 @@
             <p>Let's work together!</p>
             
             <form class="contact-form">
-                <!-- TODO: Add HTML5 form inputs here -->
-                <!-- Students will add various input types during class -->
+                <label for="name">Name:</label>
+                <input type="text" id="name" name="name" placeholder="Your full name" required>
+
+                <label for="email">Email:</label>
+                <input type="email" id="email" name="email" placeholder="you@example.com" required>
+
+                <label for="phone">Phone:</label>
+                <input type="tel" id="phone" name="phone" placeholder="510-555-0123">
+
+                <label for="start-date">Preferred Start Date:</label>
+                <input type="date" id="start-date" name="start-date">
+
+                <label for="budget">Budget (USD):</label>
+                <input type="number" id="budget" name="budget" min="0" step="100" placeholder="1000">
+
+                <label for="project-type">Project Type:</label>
+                <select id="project-type" name="project-type">
+                    <option value="">Choose one...</option>
+                    <option value="website">Website</option>
+                    <option value="data-analysis">Data analysis</option>
+                    <option value="other">Something else</option>
+                </select>
+
+                <fieldset>
+                    <legend>Preferred Contact Method:</legend>
+                    <div class="form-row">
+                        <input type="radio" id="contact-email" name="contact" value="email" checked>
+                        <label for="contact-email">Email</label>
+                    </div>
+                    <div class="form-row">
+                        <input type="radio" id="contact-phone" name="contact" value="phone">
+                        <label for="contact-phone">Phone</label>
+                    </div>
+                </fieldset>
+
+                <fieldset>
+                    <legend>Project Timeline:</legend>
+                    <div class="form-row">
+                        <input type="checkbox" id="asap" name="timeline" value="asap">
+                        <label for="asap">ASAP</label>
+                    </div>
+                    <div class="form-row">
+                        <input type="checkbox" id="flexible" name="timeline" value="flexible">
+                        <label for="flexible">Flexible</label>
+                    </div>
+                </fieldset>
+
+                <label for="message">Message:</label>
+                <textarea id="message" name="message" rows="5" placeholder="Tell me about your project"></textarea>
+
+                <button type="submit">Send Message</button>
             </form>
         </section>
     </main>
